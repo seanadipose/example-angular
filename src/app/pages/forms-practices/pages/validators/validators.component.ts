@@ -5,8 +5,8 @@ import { ReactiveFormsService } from '../../services/reactive-forms.service';
 @Component({
   selector: 'app-validators',
   template: `
+    <mat-toolbar color="accent">Validators</mat-toolbar>
     <app-page-container>
-      <h1>Form Validators</h1>
       <p>Simple validator examples</p>
       <a href="https://angular.io/guide/reactive-forms">Reactive Forms</a>
       <p>

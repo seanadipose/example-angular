@@ -22,8 +22,12 @@ const rootRoutes = rootRoutesFactory();
       >
         <div class="fit-menu">
           <mat-toolbar color="primary" class="menu-header">Menu</mat-toolbar>
-          <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px">
-            <mat-list>
+          <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="20px">
+            <mat-list
+              fxLayout="column"
+              fxLayoutAlign="start start"
+              fxLayoutGap="20px"
+            >
               <a
                 mat-list-item
                 [routerLink]="introduction.path"
