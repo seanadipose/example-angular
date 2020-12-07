@@ -7,10 +7,16 @@ import { DashboardCard } from 'src/app/shared/models/dashboard-card.model';
 @Component({
   selector: 'app-introduction',
   template: `
+    <header mdcToolbar>
+      <div mdcToolbarRow>
+        <section mdcToolbarSection alignStart>
+          <span mdcToolbarTitle>Introduction</span>
+        </section>
+      </div>
+    </header>
     <app-page-container
       ><div fxLayout="column" fxLayoutAlign="space-around start">
         <app-title-card docLink="https://angular.io/docs">
-          <card-title>Introduction to Sean's Angular Examples</card-title>
           <card-content>
             <p>
               The Angular framework is a very opinionated framework that is a
