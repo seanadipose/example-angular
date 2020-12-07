@@ -13,9 +13,7 @@ import { DashboardCard } from 'src/app/shared/models/dashboard-card.model';
 
     <app-page-container>
       <app-title-card docLink="https://angular.io/guide/reactive-forms">
-        <card-title
-          >Introduction to concepts in angular reactive forms.</card-title
-        >
+        <card-title>Introduction to Angular Reactive Forms.</card-title>
         <card-content>
           <p>
             Angular reactive forms are incredibly powerful but have a number of

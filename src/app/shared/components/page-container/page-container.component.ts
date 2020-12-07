@@ -4,11 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-page-container',
   template: `
     <div class="page-container">
-      <div
-        fxLayout="column"
-        fxLayoutAlign="space-around start"
-        fxLayoutGap="15px"
-      >
+      <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="15px">
         <ng-content></ng-content>
       </div>
     </div>
