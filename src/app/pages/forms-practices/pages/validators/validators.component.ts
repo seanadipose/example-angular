@@ -18,7 +18,12 @@ import { ReactiveFormsService } from '../../services/reactive-forms.service';
           >Reactive Forms</a
         >
       </p>
-      <h2>Declare Validators Explicitly</h2>
+      <h2>
+        Declare Validators Explicitly
+        <app-repo-link
+          link="https://github.com/seanadipose/example-angular/blob/master/src/app/pages/forms-practices/pages/validators/validators.component.ts"
+        ></app-repo-link>
+      </h2>
       <p>
         This example shows explicitly declared validators. Submission is
         disabled based on the state of the validators.
@@ -42,7 +47,13 @@ import { ReactiveFormsService } from '../../services/reactive-forms.service';
           {{ validatorExample.fg.getRawValue() | json }}
         </mat-card>
       </div>
-      <h2>Dynamically Add Validators</h2>
+      <h2>
+        Dynamically Add Validators
+
+        <app-repo-link
+          link="https://github.com/seanadipose/example-angular/blob/master/src/app/pages/forms-practices/pages/validators/validators.component.ts"
+        ></app-repo-link>
+      </h2>
       <p>In the example below validators are added and removed dynamically</p>
       <app-contact-form [fg]="fg" #requireAllFg="contactForm">
         <action-button
@@ -54,7 +65,12 @@ import { ReactiveFormsService } from '../../services/reactive-forms.service';
         >
       </app-contact-form>
 
-      <h2>Custom Validators</h2>
+      <h2>
+        Custom Validators
+        <app-repo-link
+          link="https://github.com/seanadipose/example-angular/blob/master/src/app/pages/forms-practices/pages/validators/validators.component.ts"
+        ></app-repo-link>
+      </h2>
       <p>This is a custom sin validator</p>
       <mat-card>
         <mat-form-field>

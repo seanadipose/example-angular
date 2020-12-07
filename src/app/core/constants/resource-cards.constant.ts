@@ -33,6 +33,20 @@ const RESOURCES_LIBRARY_LINKS = [
 ];
 
 const RESOURCES_TUTORIAL_LINKS = [
+  // https://angular.io/guide/dependency-injection-in-action
+  // https://angular.io/tutorial
+  {
+    title: 'Observable Data Service',
+    link: ['https://coryrylan.com/blog/angular-observable-data-services'],
+    description: 'Killer tutorial on building observable data services',
+    linkText: 'Tutorial',
+  },
+  {
+    title: 'Angular Tour of Heroes',
+    link: ['https://angular.io/tutorial'],
+    description: 'The base angular tutorial',
+    linkText: 'Tour of Heroes',
+  },
   {
     title: 'State Management with Services',
     link: [

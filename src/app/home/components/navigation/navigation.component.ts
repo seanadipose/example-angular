@@ -5,6 +5,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import { rootRoutesFactory } from 'src/app/core/factories/root-routes.factory';
 import { formPracticesRoutesFactory } from 'src/app/core/factories/form-practices-routes.constant';
 import { routeConfigToArray } from 'src/app/core/functions/route-config-to-array.function';
+import { dependencyInjectionRoutesFactory } from 'src/app/core/factories/dependency-injection-routes.factory';
 
 const rootRoutes = rootRoutesFactory();
 
@@ -63,6 +64,34 @@ const rootRoutes = rootRoutesFactory();
                   </mat-nav-list>
                 </div>
               </mat-list-item>
+
+              <mat-list-item fxLayout="column" fxLayoutAlign="start start">
+                <div>
+                  <a
+                    matLine
+                    [routerLink]="services.path"
+                    routerLinkActive="selected"
+                    #servicesRla="routerLinkActive"
+                    >SERVICES</a
+                  >
+                  <mat-nav-list *ngIf="servicesRla.isActive" dense>
+                    <ng-container *ngFor="let link of servicesChildren">
+                      <mat-list-item *ngIf="link.path.length > 0">
+                        <a
+                          matLine
+                          [routerLink]="[services.path, link.path]"
+                          routerLinkActive="selected"
+                          #rla="routerLinkActive"
+                          style="display: block;"
+                        >
+                          {{ link.name }}
+                        </a>
+                        <mat-icon>chevron_right</mat-icon>
+                      </mat-list-item>
+                    </ng-container>
+                  </mat-nav-list>
+                </div>
+              </mat-list-item>
               <a
                 mat-list-item
                 [routerLink]="resources.path"
@@ -98,6 +127,8 @@ export class NavigationComponent {
   resources = rootRoutes.resources;
   formsChildren = routeConfigToArray(formPracticesRoutesFactory());
   introduction = rootRoutes.introduction;
+  services = rootRoutes.services;
+  servicesChildren = routeConfigToArray(dependencyInjectionRoutesFactory());
 
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)

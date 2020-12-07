@@ -23,6 +23,13 @@ export function rootRoutesFactory(): RouteConfigType {
           (m) => m.ResourcesModule
         ),
     },
+    services: {
+      path: 'services',
+      loadChildren: () =>
+        import(
+          '../../pages/dependency-injection/dependency-injection.module'
+        ).then((m) => m.DependencyInjectionModule),
+    },
     redirect: {
       path: '',
       redirectTo: 'intro',

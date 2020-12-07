@@ -15,6 +15,9 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { EaFormsModule } from '../modules/forms/forms.module';
 import { TitleCardComponent } from './components/title-card/title-card.component';
 import { DashboardListComponent } from './components/dashboard-list/dashboard-list.component';
+import { RepoLinkButtonComponent } from './components/repo-link-button/repo-link-button.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
+import { CenteredContainerComponent } from './components/centered-container/centered-container.component';
 
 const matModules = [
   MatGridListModule,
@@ -29,7 +32,7 @@ const matModules = [
   MatSidenavModule,
   MatIconModule,
   MatListModule,
-
+  MatTooltipModule,
   FlexLayoutModule,
 ];
 
@@ -39,6 +42,8 @@ const matModules = [
     DashboardComponent,
     TitleCardComponent,
     DashboardListComponent,
+    RepoLinkButtonComponent,
+    CenteredContainerComponent,
   ],
   imports: [CommonModule, ...matModules, EaFormsModule],
   exports: [
@@ -47,6 +52,8 @@ const matModules = [
     ...matModules,
     TitleCardComponent,
     DashboardListComponent,
+    RepoLinkButtonComponent,
+    CenteredContainerComponent,
   ],
 })
 export class SharedModule {}
