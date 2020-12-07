@@ -3,9 +3,9 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-title-card',
   template: `
-    <mat-card class="mat-elevation-z0">
+    <mat-card>
       <mat-card-title>
-        <h2><ng-content select="card-title"></ng-content></h2>
+        <mat-toolbar><ng-content select="card-title"></ng-content></mat-toolbar>
       </mat-card-title>
       <mat-card-subtitle>
         <h3><ng-content select="card-subtitle"></ng-content></h3>

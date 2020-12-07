@@ -8,7 +8,7 @@ import { ServicesCardsType } from 'src/app/core/types/services-cards.type';
     <mat-toolbar color="accent">Services in Angular</mat-toolbar>
 
     <app-page-container>
-      <app-title-card>
+      <app-title-card style="width: 100%;">
         <card-title>{{ cards[2].title }}</card-title>
         <card-content
           ><p *ngFor="let line of cards[2].description">

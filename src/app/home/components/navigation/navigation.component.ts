@@ -25,7 +25,11 @@ const rootRoutes = rootRoutesFactory();
         <div class="fit-menu">
           <mat-toolbar color="primary" class="menu-header"></mat-toolbar>
           <div mdcListGroup>
-            <button mdcButton style="width: 100%;">
+            <button
+              mdcButton
+              style="width: 100%;"
+              (click)="navigate([introduction.path])"
+            >
               <a
                 [routerLink]="introduction.path"
                 routerLinkActive="selected"
@@ -38,7 +42,11 @@ const rootRoutes = rootRoutesFactory();
             <ul mdcList></ul>
             <div mdcListDivider></div>
 
-            <button mdcButton style="width: 100%;">
+            <button
+              mdcButton
+              style="width: 100%;"
+              (click)="navigate([forms.path])"
+            >
               <a
                 [routerLink]="forms.path"
                 routerLinkActive="selected"
@@ -82,7 +90,11 @@ const rootRoutes = rootRoutesFactory();
             </ul>
             <div mdcListDivider></div>
 
-            <button mdcButton style="width: 100%;">
+            <button
+              mdcButton
+              style="width: 100%;"
+              (click)="navigate([services.path])"
+            >
               <a
                 [routerLink]="services.path"
                 routerLinkActive="selected"
@@ -123,7 +135,11 @@ const rootRoutes = rootRoutesFactory();
               </ng-container>
             </ul>
             <div mdcListDivider></div>
-            <button mdcButton style="width: 100%;">
+            <button
+              mdcButton
+              style="width: 100%;"
+              (click)="navigate([resources.path])"
+            >
               <a
                 [routerLink]="resources.path"
                 routerLinkActive="selected"
