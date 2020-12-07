@@ -3,6 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { IntroductionComponent } from './home/pages/introduction/introduction.component';
 import { HomePageComponent } from './home/pages/home-page/home-page.component';
+import { rootRoutesFactory } from './core/factories/root-routes.factory';
+import { routeConfigToArray } from './core/functions/route-config-to-array.function';
+
+const rootChildren = routeConfigToArray(rootRoutesFactory());
 
 const routes: Routes = [
   {
@@ -12,19 +16,7 @@ const routes: Routes = [
       {
         path: '',
         component: HomePageComponent,
-        children: [
-          {
-            path: '',
-            component: IntroductionComponent,
-          },
-          {
-            path: 'forms',
-            loadChildren: () =>
-              import('./pages/forms-practices/forms-practices.module').then(
-                (m) => m.FormsPracticesModule
-              ),
-          },
-        ],
+        children: rootChildren,
       },
     ],
   },

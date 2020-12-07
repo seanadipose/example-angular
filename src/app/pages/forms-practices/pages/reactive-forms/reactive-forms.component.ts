@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { ReactiveFormsService } from '../../services/reactive-forms.service';
 
 @Component({
   selector: 'app-reactive-forms',
@@ -13,6 +11,15 @@ import { ReactiveFormsService } from '../../services/reactive-forms.service';
         forms are not maintainable without additional libraries, in my opinion.
       </p>
       <a href="https://angular.io/guide/reactive-forms">Reactive Forms</a>
+      <p>
+        The examples below show 3 different ways to declare new forms. This is
+        taken from this tutorial:
+
+        <a
+          href="https://malcoded.com/posts/angular-fundamentals-reactive-forms/"
+          >Reactive Forms</a
+        >
+      </p>
 
       <h2>FormGroup</h2>
       <app-formgroup></app-formgroup>

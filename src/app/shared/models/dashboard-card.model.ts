@@ -1,6 +1,6 @@
 export interface DashboardCard {
   title: string;
-  link: string;
+  link: string[];
   description: string;
   linkText?: string;
 }

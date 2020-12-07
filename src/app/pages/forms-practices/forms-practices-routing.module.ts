@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { formPracticesRoutesFactory } from 'src/app/core/constants/form-practices-routes.constant';
+import { formPracticesRoutesFactory } from 'src/app/core/factories/form-practices-routes.constant';
 import { routeConfigToArray } from 'src/app/core/functions/route-config-to-array.function';
 
 const formRoutes = formPracticesRoutesFactory();
