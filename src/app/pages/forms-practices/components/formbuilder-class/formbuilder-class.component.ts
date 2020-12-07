@@ -7,7 +7,6 @@ import { ReactiveFormsService } from '../../services/reactive-forms.service';
   selector: 'app-formbuilder-class',
   template: `
     <mat-card class="contact-form">
-      <mat-card-title>Formbuilder Class Contact Form</mat-card-title>
       <form [formGroup]="fg" fxLayout="column">
         <div formGroupName="personalData" fxLayout="column">
           <mat-form-field>

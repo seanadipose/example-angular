@@ -6,9 +6,8 @@ import { ReactiveFormsService } from '../../services/reactive-forms.service';
   selector: 'app-contact-form',
   template: `
     <mat-card class="contact-form">
-      <mat-card-title>Formbuilder Class Contact Form</mat-card-title>
       <mat-card-content>
-        <form [formGroup]="fg" fxLayout="column">
+        <form [formGroup]="fg">
           <div formGroupName="personalData" fxLayout="column">
             <mat-form-field>
               <mat-label>Email</mat-label>

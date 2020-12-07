@@ -15,6 +15,13 @@ export const INTRODUCTION_CARDS: readonly DashboardCard[] = [
     linkText: 'Tutorial and examples',
   },
   {
+    title: 'Services',
+    link: [root.services.path],
+    description:
+      'Tutorials, resources and code samples for Angular services and Dependency Injection',
+    linkText: 'Tutorial and examples',
+  },
+  {
     title: 'Resources',
     link: [root.resources.path],
     description:

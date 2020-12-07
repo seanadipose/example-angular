@@ -20,7 +20,7 @@ import { DashboardCard } from '../../models/dashboard-card.model';
         <mat-card-content class="dashboard-card-content">
           <div>{{ card.description }}</div>
         </mat-card-content>
-        <mat-card-footer>
+        <mat-card-footer style="background-color">
           <button
             mat-button
             *ngIf="card.linkText"

@@ -21,26 +21,37 @@ import { Component, OnInit } from '@angular/core';
         >
       </p>
 
-      <h2>
-        FormGroup
-        <app-repo-link
-          link="https://github.com/seanadipose/example-angular/blob/master/src/app/pages/forms-practices/components/formgroup/formgroup.component.ts"
-        ></app-repo-link>
-      </h2>
-      <app-formgroup></app-formgroup>
-      <h2>
-        Formbuilder<app-repo-link
-          link="https://github.com/seanadipose/example-angular/blob/master/src/app/pages/forms-practices/components/formbuilder/formbuilder.component.ts"
-        ></app-repo-link>
-      </h2>
-      <app-formbuilder></app-formbuilder>
-
-      <h2>
-        Formbuilder with Class<app-repo-link
-          link="https://github.com/seanadipose/example-angular/blob/master/src/app/pages/forms-practices/components/formbuilder-class/formbuilder-class.component.ts"
-        ></app-repo-link>
-      </h2>
-      <app-formbuilder-class></app-formbuilder-class>
+      <div
+        fxLayout="row"
+        fxLayoutAlign="space-between center"
+        class="examples-row"
+      >
+        <div>
+          <h2>
+            FormGroup
+            <app-repo-link
+              link="https://github.com/seanadipose/example-angular/blob/master/src/app/pages/forms-practices/components/formgroup/formgroup.component.ts"
+            ></app-repo-link>
+          </h2>
+          <app-formgroup></app-formgroup>
+        </div>
+        <div>
+          <h2>
+            Formbuilder<app-repo-link
+              link="https://github.com/seanadipose/example-angular/blob/master/src/app/pages/forms-practices/components/formbuilder/formbuilder.component.ts"
+            ></app-repo-link>
+          </h2>
+          <app-formbuilder></app-formbuilder>
+        </div>
+        <div>
+          <h2>
+            Formbuilder with Class<app-repo-link
+              link="https://github.com/seanadipose/example-angular/blob/master/src/app/pages/forms-practices/components/formbuilder-class/formbuilder-class.component.ts"
+            ></app-repo-link>
+          </h2>
+          <app-formbuilder-class></app-formbuilder-class>
+        </div>
+      </div>
     </app-page-container>
   `,
   styleUrls: ['./reactive-forms.component.scss'],

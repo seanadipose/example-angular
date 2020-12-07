@@ -58,6 +58,7 @@ const rootRoutes = rootRoutesFactory();
                   *ngIf="link.path.length > 0"
                   mdcListItem
                   [selected]="rla.isActive"
+                  (click)="navigate([forms.path, link.path])"
                 >
                   <a
                     mdc-list-item
@@ -101,6 +102,7 @@ const rootRoutes = rootRoutesFactory();
                   *ngIf="link.path.length > 0"
                   mdcListItem
                   [selected]="rla.isActive"
+                  (click)="navigate([services.path, link.path])"
                 >
                   <a
                     [routerLink]="[services.path, link.path]"
