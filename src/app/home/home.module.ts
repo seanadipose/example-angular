@@ -1,25 +1,20 @@
-import { NgModule } from '@angular/core';
+import { InjectionToken, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HomePageComponent } from './components/home-page/home-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { LayoutModule } from '@angular/cdk/layout';
-import { MatButtonModule } from '@angular/material/button';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { IntroductionComponent } from './pages/introduction/introduction.component';
+import { RouterModule } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
+
+import { INTRODUCTION_CARDS } from '../core/constants/introduction-cards.constant';
+import { INTRODUCTION_CARDS_TOKEN } from '../core/tokens/dashboard-cards.token';
 
 @NgModule({
-  declarations: [NavigationComponent, HomePageComponent],
-  imports: [
-    CommonModule,
-    LayoutModule,
-    MatToolbarModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
+  declarations: [NavigationComponent, HomePageComponent, IntroductionComponent],
+  imports: [CommonModule, RouterModule, SharedModule],
+  exports: [NavigationComponent, HomePageComponent, IntroductionComponent],
+  providers: [
+    { provide: INTRODUCTION_CARDS_TOKEN, useValue: INTRODUCTION_CARDS },
   ],
-  exports: [NavigationComponent, HomePageComponent],
 })
 export class HomeModule {}

@@ -29,14 +29,13 @@ import { map, shareReplay } from 'rxjs/operators';
             aria-label="Toggle sidenav"
             mat-icon-button
             (click)="drawer.toggle()"
-            *ngIf="isHandset$ | async"
           >
             <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
           </button>
-          <span>example-angular</span>
+          <span>Angular Examples</span>
         </mat-toolbar>
         <!-- Add Content Here -->
-        <ng-content></ng-content>
+        <router-outlet></router-outlet>
       </mat-sidenav-content>
     </mat-sidenav-container>
   `,

@@ -1,0 +1,33 @@
+
+.dashboard-card {
+  // position: absolute;
+  // top: 15px;
+  // left: 15px;
+  // right: 15px;
+  // bottom: 15px;
+  width: 360px;
+  // min-height: 200px;
+}
+
+.more-button {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.dashboard-card-content {
+  text-align: center;
+  height: 200px;
+
+}
+
+.dashboard-title {
+  text-align: center;
+  height: 33%;
+}
+
+mat-card-footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
