@@ -18,6 +18,9 @@ import { DashboardListComponent } from './components/dashboard-list/dashboard-li
 import { RepoLinkButtonComponent } from './components/repo-link-button/repo-link-button.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { CenteredContainerComponent } from './components/centered-container/centered-container.component';
+import { CodeBlockComponent } from './components/code-block/code-block.component';
+import { HighlightModule } from 'ngx-highlightjs';
+import { HighlightPlusModule } from 'ngx-highlightjs/plus';
 
 const matModules = [
   MatGridListModule,
@@ -44,8 +47,9 @@ const matModules = [
     DashboardListComponent,
     RepoLinkButtonComponent,
     CenteredContainerComponent,
+    CodeBlockComponent,
   ],
-  imports: [CommonModule, ...matModules, EaFormsModule],
+  imports: [CommonModule, ...matModules, EaFormsModule, HighlightModule],
   exports: [
     PageContainerComponent,
     DashboardComponent,
@@ -54,6 +58,7 @@ const matModules = [
     DashboardListComponent,
     RepoLinkButtonComponent,
     CenteredContainerComponent,
+    CodeBlockComponent,
   ],
 })
 export class SharedModule {}

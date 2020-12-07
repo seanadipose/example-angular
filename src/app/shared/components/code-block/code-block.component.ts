@@ -10,6 +10,7 @@ import { HighlightResult } from 'ngx-highlightjs';
 })
 export class CodeBlockComponent implements OnInit {
   @Input() code: string;
+
   constructor() {}
 
   ngOnInit(): void {}

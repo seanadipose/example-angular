@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { HighlightResult } from 'ngx-highlightjs';
 import {
   INTRODUCTION_CARDS_TOKEN,
   SERVICES_CARDS_TOKEN,
@@ -7,6 +8,7 @@ import {
 import { DashboardCardListType } from 'src/app/core/types/dashboard-cards.type';
 import { ServicesCardsType } from 'src/app/core/types/services-cards.type';
 import { DashboardCard } from 'src/app/shared/models/dashboard-card.model';
+import { Injectable } from '@angular/core';
 
 @Component({
   selector: 'app-services-introduction',
@@ -31,6 +33,13 @@ import { DashboardCard } from 'src/app/shared/models/dashboard-card.model';
           </p></card-content
         >
       </app-title-card>
+      <app-title-card>
+        <card-title>Simple Service Declaration</card-title>
+        <card-content>
+          <app-code-block [code]="code"></app-code-block>
+        </card-content>
+      </app-title-card>
+
       <app-dashboard
         [cards]="introCards"
         (selected)="navigate($event)"
@@ -49,5 +58,26 @@ export class ServicesIntroductionComponent implements OnInit {
   ngOnInit(): void {}
   navigate(card: DashboardCard) {
     this.router.navigate(card.link);
+  }
+
+  response: HighlightResult;
+
+  code = `
+  @Injectable({
+    providedIn: 'root'
+  })
+  export class NameService {
+  }
+`;
+
+  onHighlight(e) {
+    console.log(e);
+    this.response = {
+      language: e.language,
+      relevance: e.relevance,
+      second_best: '{...}',
+      top: '{...}',
+      value: '{...}',
+    };
   }
 }

@@ -34,6 +34,7 @@ const rootRoutes = rootRoutesFactory();
                 [routerLink]="introduction.path"
                 routerLinkActive="selected"
                 #introRla="routerLinkActive"
+                style="width: 100%;"
                 >INTRODUCTION</a
               >
 
@@ -44,6 +45,7 @@ const rootRoutes = rootRoutesFactory();
                     [routerLink]="forms.path"
                     routerLinkActive="selected"
                     #formsRla="routerLinkActive"
+                    style="width: 100%;"
                     >FORMS</a
                   >
                   <mat-nav-list *ngIf="formsRla.isActive">
@@ -72,6 +74,7 @@ const rootRoutes = rootRoutesFactory();
                     [routerLink]="services.path"
                     routerLinkActive="selected"
                     #servicesRla="routerLinkActive"
+                    style="width: 100%;"
                     >SERVICES</a
                   >
                   <mat-nav-list *ngIf="servicesRla.isActive" dense>
@@ -92,11 +95,14 @@ const rootRoutes = rootRoutesFactory();
                   </mat-nav-list>
                 </div>
               </mat-list-item>
+              <mat-divider></mat-divider>
+
               <a
                 mat-list-item
                 [routerLink]="resources.path"
                 routerLinkActive="selected"
                 #resourceRla="routerLinkActive"
+                style="width: 100%;"
                 >RESOURCES</a
               >
             </mat-list>

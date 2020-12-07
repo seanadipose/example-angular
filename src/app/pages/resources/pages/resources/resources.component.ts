@@ -15,27 +15,21 @@ import { ResourceCardsType } from 'src/app/core/types/resource-cards.type';
         class="main-content"
       >
         <mat-card class="container-card">
-          <mat-card-header
-            ><mat-card-title>Reference Links</mat-card-title></mat-card-header
-          >
+          <mat-toolbar>Reference Links</mat-toolbar>
+
           <mat-card-content>
-            <app-resources-title-card title="Links"></app-resources-title-card>
             <app-dashboard-list [cards]="cards.useful"></app-dashboard-list>
           </mat-card-content>
         </mat-card>
         <mat-card class="container-card">
-          <app-resources-title-card
-            title="Libraries"
-          ></app-resources-title-card>
+          <mat-toolbar>Libraries</mat-toolbar>
 
           <mat-card-content>
             <app-dashboard-list [cards]="cards.libraries"></app-dashboard-list>
           </mat-card-content>
         </mat-card>
         <mat-card class="container-card">
-          <app-resources-title-card
-            title="Tutorials"
-          ></app-resources-title-card>
+          <mat-toolbar>Tutorials</mat-toolbar>
 
           <mat-card-content>
             <app-dashboard-list [cards]="cards.tutorials"></app-dashboard-list>

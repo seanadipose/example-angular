@@ -13,6 +13,7 @@ import { ServicesWhyComponent } from './pages/services-why/services-why.componen
 import { ServicesBestPracticesComponent } from './pages/best-practices/services-best-practices.component';
 import { DependencyInjectionComponent } from './pages/dependency-injection/dependency-injection.component';
 import { SERVICES_INTRODUCTION_CARDS } from 'src/app/core/constants/introduction-cards.constant';
+import { HIGHLIGHT_OPTIONS, HighlightModule } from 'ngx-highlightjs';
 
 @NgModule({
   declarations: [
