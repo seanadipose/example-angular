@@ -29,39 +29,43 @@ const rootRoutes = rootRoutesFactory();
                 [routerLink]="introduction.path"
                 routerLinkActive="selected"
                 #introRla="routerLinkActive"
-                ><h2 class="mat-primary">Introduction</h2></a
+                >INTRODUCTION</a
               >
 
-              <mat-list-item>
-                <div fxLayout="column">
+              <mat-list-item fxLayout="column" fxLayoutAlign="start start">
+                <div>
                   <a
                     matLine
                     [routerLink]="forms.path"
                     routerLinkActive="selected"
                     #formsRla="routerLinkActive"
-                    ><h2 class="mat-primary">Forms</h2></a
+                    >FORMS</a
                   >
                   <mat-nav-list *ngIf="formsRla.isActive">
                     <ng-container *ngFor="let link of formsChildren">
-                      <a
-                        *ngIf="link.path.length > 0"
-                        mat-list-item
-                        [routerLink]="[forms.path, link.path]"
-                        routerLinkActive="selected"
-                        #rla="routerLinkActive"
-                      >
-                        <button
-                          mat-button
-                          color="{{ rla.isActive ? 'primary' : '' }}"
+                      <mat-list-item *ngIf="link.path.length > 0">
+                        <a
+                          matLine
+                          [routerLink]="[forms.path, link.path]"
+                          routerLinkActive="selected"
+                          #rla="routerLinkActive"
+                          style="display: block;"
                         >
-                          {{ $any(link.name) }}
-                          >
-                        </button>
-                      </a>
+                          {{ link.name }}
+                        </a>
+                        <mat-icon>chevron_right</mat-icon>
+                      </mat-list-item>
                     </ng-container>
                   </mat-nav-list>
                 </div>
               </mat-list-item>
+              <a
+                mat-list-item
+                [routerLink]="resources.path"
+                routerLinkActive="selected"
+                #resourceRla="routerLinkActive"
+                >RESOURCES</a
+              >
             </mat-list>
           </div>
         </div>
@@ -87,6 +91,7 @@ const rootRoutes = rootRoutesFactory();
 })
 export class NavigationComponent {
   forms = rootRoutes.forms;
+  resources = rootRoutes.resources;
   formsChildren = routeConfigToArray(formPracticesRoutesFactory());
   introduction = rootRoutes.introduction;
 

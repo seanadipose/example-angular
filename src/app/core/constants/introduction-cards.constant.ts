@@ -12,6 +12,13 @@ export const INTRODUCTION_CARDS: readonly DashboardCard[] = [
     description: 'Angular Form Examples using Reactive Forms',
     linkText: 'Tutorial and examples',
   },
+  {
+    title: 'Resources',
+    link: [root.resources.path],
+    description:
+      'Helpful links, packages, resources and tutorials to succeed in Angular.',
+    linkText: 'Resources',
+  },
 ];
 
 export const FORMS_INTRODUCTION_CARDS: readonly DashboardCard[] = [

@@ -16,6 +16,13 @@ export function rootRoutesFactory(): RouteConfigType {
           (m) => m.FormsPracticesModule
         ),
     },
+    resources: {
+      path: 'resources',
+      loadChildren: () =>
+        import('../../pages/resources/resources.module').then(
+          (m) => m.ResourcesModule
+        ),
+    },
     redirect: {
       path: '',
       redirectTo: 'intro',

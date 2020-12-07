@@ -10,6 +10,19 @@ import { DashboardCard } from 'src/app/shared/models/dashboard-card.model';
 @Component({
   selector: 'app-forms-introduction',
   template: ` <app-page-container>
+    <app-title-card docLink="https://angular.io/guide/reactive-forms">
+      <card-title>Angular Reactive Forms</card-title>
+      <card-subtitle
+        >Introduction to concepts in angular reactive forms.</card-subtitle
+      >
+      <card-content>
+        <p>
+          Angular reactive forms are incredibly powerful but have a number of
+          quirks and behaviors to pay attention to.
+        </p>
+      </card-content>
+    </app-title-card>
+
     <app-dashboard [cards]="cards" (selected)="navigate($event)"></app-dashboard
   ></app-page-container>`,
   styleUrls: ['./forms-introduction.component.scss'],

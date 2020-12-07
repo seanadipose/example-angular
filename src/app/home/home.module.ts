@@ -1,4 +1,8 @@
-import { InjectionToken, NgModule } from '@angular/core';
+import {
+  CUSTOM_ELEMENTS_SCHEMA,
+  InjectionToken,
+  NgModule,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
@@ -27,5 +31,6 @@ import { MatExpansionModule } from '@angular/material/expansion';
   providers: [
     { provide: INTRODUCTION_CARDS_TOKEN, useValue: INTRODUCTION_CARDS },
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HomeModule {}

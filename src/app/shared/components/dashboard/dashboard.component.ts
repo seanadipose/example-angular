@@ -1,14 +1,11 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { map } from 'rxjs/operators';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout';
-import { DashboardCard } from '../models/dashboard-card.model';
+import { DashboardCard } from '../../models/dashboard-card.model';
 
 @Component({
   selector: 'app-dashboard',
   template: `
-    <!-- <div class="grid-container"> -->
-    <!-- <mat-grid-list cols="2"> -->
-    <!-- <mat-grid-tile *ngFor="let card of cards"> -->
     <div fxLayout="row" fxLayoutAlign="start start" fxLayoutGap="15px">
       <mat-card class="dashboard-card" *ngFor="let card of cards">
         <mat-card-title>
@@ -35,9 +32,6 @@ import { DashboardCard } from '../models/dashboard-card.model';
         </mat-card-footer>
       </mat-card>
     </div>
-    <!-- </mat-grid-tile> -->
-    <!-- </mat-grid-list> -->
-    <!-- </div> -->
   `,
   styleUrls: ['./dashboard.component.scss'],
 })
@@ -47,5 +41,5 @@ export class DashboardComponent {
 
   @Input() cards: DashboardCard[] = [];
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor() {}
 }

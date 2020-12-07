@@ -29,6 +29,10 @@ mat-subheader {
 
 .mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
   height: fit-content;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .mat-drawer-inner-container  {
   overflow: hidden !important;
@@ -57,4 +61,16 @@ mat-sidenav {
 }
 .fit-menu  {
   overflow: hidden;
+}
+
+.mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-option .mat-list-item-content {
+  padding: 0;
+}
+
+.link-button {
+  width: 100%;
+}
+::ng-deep .mat-list-item-content {
+  width:100% !important;
+
 }
