@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-reactive-forms',
   template: `
+    <mat-toolbar color="accent">Reactive Forms</mat-toolbar>
     <app-page-container>
-      <h1>Reactive Forms</h1>
       <p>
         Angular is very strong at forms. I recommend using only reactive driven
         forms. Learning them is strictly about learning the API. Template driven
