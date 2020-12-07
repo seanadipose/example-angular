@@ -17,6 +17,13 @@ const routes: Routes = [
             path: '',
             component: IntroductionComponent,
           },
+          {
+            path: 'forms',
+            loadChildren: () =>
+              import('./pages/forms-practices/forms-practices.module').then(
+                (m) => m.FormsPracticesModule
+              ),
+          },
         ],
       },
     ],

@@ -11,7 +11,7 @@ import { INTRODUCTION_CARDS_TOKEN } from '../core/tokens/dashboard-cards.token';
 
 @NgModule({
   declarations: [NavigationComponent, HomePageComponent, IntroductionComponent],
-  imports: [CommonModule, RouterModule, SharedModule],
+  imports: [CommonModule, SharedModule, RouterModule],
   exports: [NavigationComponent, HomePageComponent, IntroductionComponent],
   providers: [
     { provide: INTRODUCTION_CARDS_TOKEN, useValue: INTRODUCTION_CARDS },
