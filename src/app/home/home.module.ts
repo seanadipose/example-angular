@@ -17,6 +17,7 @@ import {
 } from '../core/constants/introduction-cards.constant';
 import { INTRODUCTION_CARDS_TOKEN } from '../core/tokens/dashboard-cards.token';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MaterialModule } from '@blox/material';
 
 @NgModule({
   declarations: [NavigationComponent, HomePageComponent, IntroductionComponent],
@@ -26,6 +27,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     RouterModule,
     MatExpansionModule,
     MatTreeModule,
+    MaterialModule,
   ],
   exports: [NavigationComponent, HomePageComponent, IntroductionComponent],
   providers: [

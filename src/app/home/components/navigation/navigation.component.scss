@@ -1,7 +1,14 @@
+@import '@material/theme/mixins';
+
 .sidenav-container {
   height: 100%;
 }
+[mdcButton] {
+  // margin-bottom: 0px;
+  // margin-top: 10px;
+  text-align: start;
 
+}
 .sidenav {
   width: 200px;
   overflow: hidden;

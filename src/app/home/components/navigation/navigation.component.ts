@@ -6,6 +6,7 @@ import { rootRoutesFactory } from 'src/app/core/factories/root-routes.factory';
 import { formPracticesRoutesFactory } from 'src/app/core/factories/form-practices-routes.constant';
 import { routeConfigToArray } from 'src/app/core/functions/route-config-to-array.function';
 import { dependencyInjectionRoutesFactory } from 'src/app/core/factories/dependency-injection-routes.factory';
+import { ActivatedRoute, Router, RouterLinkActive } from '@angular/router';
 
 const rootRoutes = rootRoutesFactory();
 
@@ -22,90 +23,115 @@ const rootRoutes = rootRoutesFactory();
         [opened]="(isHandset$ | async) === false"
       >
         <div class="fit-menu">
-          <mat-toolbar color="primary" class="menu-header">Menu</mat-toolbar>
-          <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="20px">
-            <mat-list
-              fxLayout="column"
-              fxLayoutAlign="start start"
-              fxLayoutGap="20px"
-            >
+          <mat-toolbar color="primary" class="menu-header"></mat-toolbar>
+          <div mdcListGroup>
+            <button mdcButton style="width: 100%;">
               <a
-                mat-list-item
                 [routerLink]="introduction.path"
                 routerLinkActive="selected"
                 #introRla="routerLinkActive"
                 style="width: 100%;"
-                >INTRODUCTION</a
+                >Introduction</a
               >
+            </button>
 
-              <mat-list-item fxLayout="column" fxLayoutAlign="start start">
-                <div>
-                  <a
-                    matLine
-                    [routerLink]="forms.path"
-                    routerLinkActive="selected"
-                    #formsRla="routerLinkActive"
-                    style="width: 100%;"
-                    >FORMS</a
-                  >
-                  <mat-nav-list *ngIf="formsRla.isActive">
-                    <ng-container *ngFor="let link of formsChildren">
-                      <mat-list-item *ngIf="link.path.length > 0">
-                        <a
-                          matLine
-                          [routerLink]="[forms.path, link.path]"
-                          routerLinkActive="selected"
-                          #rla="routerLinkActive"
-                          style="display: block;"
-                        >
-                          {{ link.name }}
-                        </a>
-                        <mat-icon>chevron_right</mat-icon>
-                      </mat-list-item>
-                    </ng-container>
-                  </mat-nav-list>
-                </div>
-              </mat-list-item>
+            <ul mdcList></ul>
+            <div mdcListDivider></div>
 
-              <mat-list-item fxLayout="column" fxLayoutAlign="start start">
-                <div>
-                  <a
-                    matLine
-                    [routerLink]="services.path"
-                    routerLinkActive="selected"
-                    #servicesRla="routerLinkActive"
-                    style="width: 100%;"
-                    >SERVICES</a
-                  >
-                  <mat-nav-list *ngIf="servicesRla.isActive" dense>
-                    <ng-container *ngFor="let link of servicesChildren">
-                      <mat-list-item *ngIf="link.path.length > 0">
-                        <a
-                          matLine
-                          [routerLink]="[services.path, link.path]"
-                          routerLinkActive="selected"
-                          #rla="routerLinkActive"
-                          style="display: block;"
-                        >
-                          {{ link.name }}
-                        </a>
-                        <mat-icon>chevron_right</mat-icon>
-                      </mat-list-item>
-                    </ng-container>
-                  </mat-nav-list>
-                </div>
-              </mat-list-item>
-              <mat-divider></mat-divider>
-
+            <button mdcButton style="width: 100%;">
               <a
-                mat-list-item
+                [routerLink]="forms.path"
+                routerLinkActive="selected"
+                #formsRla="routerLinkActive"
+                style="width: 100%;"
+                >Forms</a
+              >
+              <i mdcButtonIcon class="material-icons">{{
+                formsRla.isActive ? 'expand_more' : 'chevron_right'
+              }}</i
+              >&nbsp;
+            </button>
+
+            <ul mdcList *ngIf="formsRla.isActive" [dense]="true">
+              <ng-container *ngFor="let link of formsChildren">
+                <li
+                  *ngIf="link.path.length > 0"
+                  mdcListItem
+                  [selected]="rla.isActive"
+                >
+                  <a
+                    mdc-list-item
+                    [routerLink]="[forms.path, link.path]"
+                    routerLinkActive="selected"
+                    #rla="routerLinkActive"
+                    style="display: block;"
+                  >
+                    {{ link.name }}
+                  </a>
+
+                  <!-- <i
+                    mdcListItemMeta
+                    class="material-icons"
+                    (click)="navigate([forms.path, link.path])"
+                    >chevron_right</i
+                  >
+                </li> -->
+                </li></ng-container
+              >
+            </ul>
+            <div mdcListDivider></div>
+
+            <button mdcButton style="width: 100%;">
+              <a
+                [routerLink]="services.path"
+                routerLinkActive="selected"
+                #servicesRla="routerLinkActive"
+                style="width: 100%;"
+                >Services</a
+              >
+              <i mdcButtonIcon class="material-icons">{{
+                servicesRla.isActive ? 'expand_more' : 'chevron_right'
+              }}</i
+              >&nbsp;
+            </button>
+
+            <ul mdcList *ngIf="servicesRla.isActive" [dense]="true">
+              <ng-container *ngFor="let link of servicesChildren">
+                <li
+                  *ngIf="link.path.length > 0"
+                  mdcListItem
+                  [selected]="rla.isActive"
+                >
+                  <a
+                    [routerLink]="[services.path, link.path]"
+                    routerLinkActive="selected"
+                    #rla="routerLinkActive"
+                    style="display: block;"
+                  >
+                    {{ link.name }}
+                  </a>
+
+                  <!-- <i
+                    mdcListItemMeta
+                    class="material-icons"
+                    (click)="navigate([services.path, link.path])"
+                    >chevron_right</i
+                  > -->
+                </li>
+              </ng-container>
+            </ul>
+            <div mdcListDivider></div>
+            <button mdcButton style="width: 100%;">
+              <a
                 [routerLink]="resources.path"
                 routerLinkActive="selected"
-                #resourceRla="routerLinkActive"
+                #resourcesRla="routerLinkActive"
                 style="width: 100%;"
-                >RESOURCES</a
+                >Resources</a
               >
-            </mat-list>
+            </button>
+
+            <ul></ul>
           </div>
         </div>
       </mat-sidenav>
@@ -143,5 +169,13 @@ export class NavigationComponent {
       shareReplay()
     );
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
+  navigate(rl: string[]) {
+    console.log(rl);
+    this.router.navigate(rl, { relativeTo: this.route });
+  }
 }
