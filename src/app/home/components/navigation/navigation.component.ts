@@ -2,6 +2,11 @@ import { Component } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { rootRoutesFactory } from 'src/app/core/factories/root-routes.factory';
+import { formPracticesRoutesFactory } from 'src/app/core/factories/form-practices-routes.constant';
+import { routeConfigToArray } from 'src/app/core/functions/route-config-to-array.function';
+
+const rootRoutes = rootRoutesFactory();
 
 @Component({
   selector: 'app-navigation',
@@ -15,12 +20,51 @@ import { map, shareReplay } from 'rxjs/operators';
         [mode]="(isHandset$ | async) ? 'over' : 'side'"
         [opened]="(isHandset$ | async) === false"
       >
-        <mat-toolbar>Menu</mat-toolbar>
-        <mat-nav-list>
-          <a mat-list-item href="#">Link 1</a>
-          <a mat-list-item href="#">Link 2</a>
-          <a mat-list-item href="#">Link 3</a>
-        </mat-nav-list>
+        <div class="fit-menu">
+          <mat-toolbar color="primary" class="menu-header">Menu</mat-toolbar>
+          <div fxLayout="column" fxLayoutAlign="start start" fxLayoutGap="5px">
+            <mat-list>
+              <a
+                mat-list-item
+                [routerLink]="introduction.path"
+                routerLinkActive="selected"
+                #introRla="routerLinkActive"
+                ><h2 class="mat-primary">Introduction</h2></a
+              >
+
+              <mat-list-item>
+                <div fxLayout="column">
+                  <a
+                    matLine
+                    [routerLink]="forms.path"
+                    routerLinkActive="selected"
+                    #formsRla="routerLinkActive"
+                    ><h2 class="mat-primary">Forms</h2></a
+                  >
+                  <mat-nav-list *ngIf="formsRla.isActive">
+                    <ng-container *ngFor="let link of formsChildren">
+                      <a
+                        *ngIf="link.path.length > 0"
+                        mat-list-item
+                        [routerLink]="[forms.path, link.path]"
+                        routerLinkActive="selected"
+                        #rla="routerLinkActive"
+                      >
+                        <button
+                          mat-button
+                          color="{{ rla.isActive ? 'primary' : '' }}"
+                        >
+                          {{ $any(link.name) }}
+                          >
+                        </button>
+                      </a>
+                    </ng-container>
+                  </mat-nav-list>
+                </div>
+              </mat-list-item>
+            </mat-list>
+          </div>
+        </div>
       </mat-sidenav>
       <mat-sidenav-content>
         <mat-toolbar color="primary">
@@ -42,6 +86,10 @@ import { map, shareReplay } from 'rxjs/operators';
   styleUrls: ['./navigation.component.scss'],
 })
 export class NavigationComponent {
+  forms = rootRoutes.forms;
+  formsChildren = routeConfigToArray(formPracticesRoutesFactory());
+  introduction = rootRoutes.introduction;
+
   isHandset$: Observable<boolean> = this.breakpointObserver
     .observe(Breakpoints.Handset)
     .pipe(

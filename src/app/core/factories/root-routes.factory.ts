@@ -6,7 +6,7 @@ export function rootRoutesFactory(): RouteConfigType {
 
   Object.assign(route, {
     introduction: {
-      path: '',
+      path: 'intro',
       component: IntroductionComponent,
     },
     forms: {
@@ -15,6 +15,11 @@ export function rootRoutesFactory(): RouteConfigType {
         import('../../pages/forms-practices/forms-practices.module').then(
           (m) => m.FormsPracticesModule
         ),
+    },
+    redirect: {
+      path: '',
+      redirectTo: 'intro',
+      pathMatch: 'full',
     },
   });
   return route;

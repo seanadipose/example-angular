@@ -53,6 +53,16 @@ import { ReactiveFormsService } from '../../services/reactive-forms.service';
           >Clear All</cancel-button
         >
       </app-contact-form>
+
+      <h2>Custom Validators</h2>
+      <p>This is a custom sin validator</p>
+      <mat-card>
+        <mat-form-field>
+          <mat-label>SIN Number </mat-label>
+          <input matInput [formControl]="sinFc" />
+          <mat-hint>Format should follow: 560 494 007</mat-hint>
+        </mat-form-field>
+      </mat-card>
     </app-page-container>
   `,
   styleUrls: ['./validators.component.scss'],
@@ -61,6 +71,7 @@ export class ValidatorsComponent implements OnInit {
   fg = this.reactiveFormsSvc.makeFg();
   explicitFg = this.reactiveFormsSvc.makeValidatedFg();
   submitted = false;
+  sinFc = this.reactiveFormsSvc.fcWithCustomValidator();
   constructor(public reactiveFormsSvc: ReactiveFormsService) {}
 
   ngOnInit(): void {}

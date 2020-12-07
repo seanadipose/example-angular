@@ -8,6 +8,15 @@ const root = rootRoutesFactory();
 export const INTRODUCTION_CARDS: readonly DashboardCard[] = [
   {
     title: 'Forms',
+    link: [root.forms.path],
+    description: 'Angular Form Examples using Reactive Forms',
+    linkText: 'Tutorial and examples',
+  },
+];
+
+export const FORMS_INTRODUCTION_CARDS: readonly DashboardCard[] = [
+  {
+    title: 'Forms',
     link: [root.forms.path, formRoutes.reactiveForms.path],
     description: 'Angular Form Examples using Reactive Forms and RxWebForms',
     linkText: 'Tutorial and examples',

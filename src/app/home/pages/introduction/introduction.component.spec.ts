@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { INTRODUCTION_CARDS } from 'src/app/core/constants/introduction-cards.constant';
+import { FORMS_INTRODUCTION_CARDS } from 'src/app/core/constants/introduction-cards.constant';
 import { INTRODUCTION_CARDS_TOKEN } from 'src/app/core/tokens/dashboard-cards.token';
 import { DashboardCard } from 'src/app/shared/models/dashboard-card.model';
 
@@ -13,11 +13,14 @@ describe('IntroductionComponent', () => {
     await TestBed.configureTestingModule({
       declarations: [IntroductionComponent],
       providers: [
-        { provider: INTRODUCTION_CARDS_TOKEN, useValue: INTRODUCTION_CARDS },
+        {
+          provider: INTRODUCTION_CARDS_TOKEN,
+          useValue: FORMS_INTRODUCTION_CARDS,
+        },
       ],
     }).compileComponents();
     TestBed.overrideProvider(INTRODUCTION_CARDS_TOKEN, {
-      useValue: [...INTRODUCTION_CARDS],
+      useValue: [...FORMS_INTRODUCTION_CARDS],
     });
     fixture = TestBed.createComponent(IntroductionComponent);
     component = fixture.componentInstance;

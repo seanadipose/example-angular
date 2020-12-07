@@ -8,6 +8,7 @@ import {
 import { of } from 'rxjs';
 import { COUNTRIES } from 'src/app/core/constants/countries.constant';
 import { REQUEST_TYPES } from 'src/app/core/constants/request-types.constant';
+import { sinValidator } from 'src/app/modules/forms/validators/sin.validator';
 
 @Injectable({
   providedIn: 'root',
@@ -46,5 +47,9 @@ export class ReactiveFormsService {
       requestType: new FormControl(''),
       text: new FormControl(''),
     });
+  }
+
+  fcWithCustomValidator() {
+    return new FormControl(null, [Validators.required, sinValidator()]);
   }
 }

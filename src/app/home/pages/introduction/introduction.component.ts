@@ -27,19 +27,9 @@ export class IntroductionComponent implements OnInit {
   ) {
     this.cards = [...cards];
   }
-
-  ngOnInit(): void {}
   navigate(card: DashboardCard) {
-    console.log(
-      '🚀 ----------------------------------------------------------------------------------------------'
-    );
-    console.log(
-      '🚀 ~ file: introduction.component.ts ~ line 33 ~ IntroductionComponent ~ navigate ~ card',
-      card
-    );
-    console.log(
-      '🚀 ----------------------------------------------------------------------------------------------'
-    );
     this.router.navigate(card.link);
   }
+
+  ngOnInit(): void {}
 }

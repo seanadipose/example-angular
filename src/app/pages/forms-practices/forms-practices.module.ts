@@ -9,6 +9,10 @@ import { FormbuilderComponent } from './components/formbuilder/formbuilder.compo
 import { FormbuilderClassComponent } from './components/formbuilder-class/formbuilder-class.component';
 import { ContactFormComponent } from './components/contact-form/contact-form.component';
 import { ValidatorsComponent } from './pages/validators/validators.component';
+import { EaFormsModule } from 'src/app/modules/forms/forms.module';
+import { FormsIntroductionComponent } from './pages/forms-introduction/forms-introduction.component';
+import { FORM_INTRODUCTION_CARDS_TOKEN } from 'src/app/core/tokens/dashboard-cards.token';
+import { FORMS_INTRODUCTION_CARDS } from 'src/app/core/constants/introduction-cards.constant';
 
 @NgModule({
   declarations: [
@@ -18,8 +22,20 @@ import { ValidatorsComponent } from './pages/validators/validators.component';
     FormbuilderClassComponent,
     ContactFormComponent,
     ValidatorsComponent,
+    FormsIntroductionComponent,
   ],
-  imports: [CommonModule, SharedModule, FormsPracticesRoutingModule],
+  imports: [
+    CommonModule,
+    EaFormsModule,
+    SharedModule,
+    FormsPracticesRoutingModule,
+  ],
+  providers: [
+    {
+      provide: FORM_INTRODUCTION_CARDS_TOKEN,
+      useValue: FORMS_INTRODUCTION_CARDS,
+    },
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class FormsPracticesModule {}

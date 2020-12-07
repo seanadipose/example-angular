@@ -4,6 +4,8 @@
 
 .sidenav {
   width: 200px;
+  overflow: hidden;
+
 }
 
 .sidenav .mat-toolbar {
@@ -14,4 +16,45 @@
   position: sticky;
   top: 0;
   z-index: 1;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+mat-subheader {
+  font-size: 22px;
+}
+
+.mat-list-base .mat-list-item, .mat-list-base .mat-list-option {
+  height: fit-content;
+}
+.mat-drawer-inner-container  {
+  overflow: hidden !important;
+}
+
+h2 {
+  padding: 5px;
+  margin: 0;
+}
+
+.selected {
+  color: #673ab7;
+}
+
+.menu-header {
+  background-color: #673ab7 !important;
+}
+
+mat-sidenav-content {
+  background-color: #fff !important;
+
+}
+
+mat-sidenav {
+
+}
+.fit-menu  {
+  overflow: hidden;
 }
